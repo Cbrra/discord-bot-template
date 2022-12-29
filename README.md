@@ -1,4 +1,4 @@
-# discord-bot-starting-template
+# discord-bot-template
 
 <p>
     <a href="https://discord.gg/424VSPq"><img src="https://img.shields.io/discord/687287209300197566?color=5865F2&logo=discord&logoColor=white" alt="Discord server"/></a>
