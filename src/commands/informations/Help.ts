@@ -2,6 +2,11 @@ import { EmbedBuilder, SlashCommandBuilder, type ChatInputCommandInteraction } f
 import type Bot from "@structures/Bot";
 import { Command, CommandCategory } from "@structures/Command";
 
+const categoriesTranslations = {
+    [CommandCategory.Bot]: "Bot",
+    [CommandCategory.Informations]: "Informations"
+}
+
 class HelpCommand extends Command {
     public static readonly data = {
         name: "help",
@@ -32,7 +37,7 @@ class HelpCommand extends Command {
             .setFields(
                 fields.map(f => ({
                           // name -> Name
-                    name: `${f[0][0].toUpperCase()}${f[0].slice(1)}`,
+                    name: `${categoriesTranslations[f[0]] || "Unknown"}`,
                     value: f[1].join("\n")
                 }))
             );
