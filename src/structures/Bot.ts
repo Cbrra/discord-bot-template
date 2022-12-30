@@ -17,7 +17,7 @@ class Bot<Ready extends boolean = boolean> extends Client<Ready> {
         this.load();
     }
 
-    private async load() {
+    private async load(): Promise<void> {
         await this.loadCommands();
         await this.loadEvents();
     }
