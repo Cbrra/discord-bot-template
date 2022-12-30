@@ -37,6 +37,8 @@ class InteractionCreateEvent extends Event {
             return;
         }
 
+        if(command.disabled) return;
+
         try {
             await command.executeAutocomplete(interaction);
         } catch(error) {
@@ -52,6 +54,8 @@ class InteractionCreateEvent extends Event {
             console.error(`No command matching ${interaction.commandName} was found or the command is missing a "executeContext" function.`);
             return;
         }
+
+        if(command.disabled) return;
 
         try {
             await command.executeContext(interaction);
