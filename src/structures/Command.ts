@@ -2,8 +2,8 @@ import type { SlashCommandBuilder, ChatInputCommandInteraction, ContextMenuComma
 import type Bot from "./Bot";
 
 export enum CommandCategory {
-    Bot = "bot",
-    Informations = "informations"
+    Bot,
+    Informations
 }
 
 export interface ICommandData {
