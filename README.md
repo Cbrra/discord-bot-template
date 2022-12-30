@@ -15,7 +15,7 @@ A template to start your Discord bot in Typescript with [discord.js](https://git
 3. Add your bot's token and id in the .env file
 4. Run `npm i`
 5. Run `npm run register-commands`
-6. Run `npm run start`
+6. Run `npm run start` (or `F5` to debug if you are on vscode)
 7. Your bot should be online !
 
 <br>
