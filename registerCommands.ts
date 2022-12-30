@@ -19,7 +19,7 @@ import type { ICommandFile } from "@structures/Command";
             const ImportedCommand: ICommandFile = (await import(filePath)).default;
 
             if("data" in ImportedCommand) {
-                commands.push(ImportedCommand.data.toJSON());
+                commands.push(ImportedCommand.data.slashBuilder.toJSON());
             } else {
                 console.warn(`[WARNING] The command at ${filePath} is missing a required "data" property.`);
             }
