@@ -1,16 +1,28 @@
 import type { SlashCommandBuilder, ChatInputCommandInteraction, ContextMenuCommandInteraction, AutocompleteInteraction } from "discord.js";
 import type Bot from "./Bot";
 
+export enum CommandCategory {
+    Bot = "bot",
+    Informations = "informations"
+}
+
+export interface ICommandData {
+    readonly name: string;
+    readonly category: CommandCategory;
+    readonly slashBuilder: SlashCommandBuilder;
+}
+
 export interface ICommandFile {
-    readonly data: SlashCommandBuilder;
+    readonly data: ICommandData;
     new(client: Bot): Command;
 }
 
 export abstract class Command {
-    public static readonly data: SlashCommandBuilder;
+    public static readonly data: ICommandData;
     public disabled: boolean = false;
-    public constructor(readonly client: Bot<true>) {
+    protected constructor(readonly client: Bot<true>, readonly data: ICommandData) {
         this.client = client;
+        this.data = data;
     }
 
     public execute?(interaction: ChatInputCommandInteraction): Promise<void>;
