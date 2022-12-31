@@ -9,7 +9,7 @@ export enum CommandCategory {
 export interface ICommandData {
     readonly name: string;
     readonly category: CommandCategory;
-    readonly slashBuilder: SlashCommandBuilder;
+    readonly slashBuilder: SlashCommandBuilder | Omit<SlashCommandBuilder, "addSubcommand" | "addSubcommandGroup">;
 }
 
 export interface ICommandFile {
