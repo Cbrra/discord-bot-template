@@ -7,8 +7,6 @@
 ## About
 A template to start your Discord bot in Typescript with [discord.js](https://github.com/discordjs/discord.js)
 
-<br>
-
 # Installation
 1. Install Node.js
 2. Download the template
@@ -18,15 +16,11 @@ A template to start your Discord bot in Typescript with [discord.js](https://git
 6. Run `npm run start` (or `F5` to debug if you are on vscode)
 7. Your bot should be online !
 
-<br>
-
 # To know
 - You can rename the `src/structures/Bot.ts` file and its class by the name of your bot
 - In your commands you can use the built-in async functions `execute`, `executeAutocomplete` and `executeContext` in relation to what your command does
 - Commands and events loaded are added in `Bot#commands` and `Bot#events` respectively
 - The `Command` and `Event` classes both have the `disabled` property which, once enabled, allows you to disable the desired command or event
-
-<br>
 
 # Help
 
