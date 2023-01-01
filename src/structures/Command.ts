@@ -1,4 +1,12 @@
-import type { SlashCommandBuilder, ChatInputCommandInteraction, ContextMenuCommandInteraction, AutocompleteInteraction } from "discord.js";
+import type {
+    SlashCommandBuilder,
+    SlashCommandSubcommandBuilder,
+    SlashCommandSubcommandGroupBuilder,
+    SlashCommandSubcommandsOnlyBuilder,
+    ChatInputCommandInteraction,
+    ContextMenuCommandInteraction,
+    AutocompleteInteraction
+} from "discord.js";
 import type Bot from "./Bot";
 
 export enum CommandCategory {
@@ -9,7 +17,7 @@ export enum CommandCategory {
 export interface ICommandData {
     readonly name: string;
     readonly category: CommandCategory;
-    readonly slashBuilder: SlashCommandBuilder | Omit<SlashCommandBuilder, "addSubcommand" | "addSubcommandGroup">;
+    readonly slashBuilder: SlashCommandBuilder | Omit<SlashCommandBuilder, "addSubcommand" | "addSubcommandGroup"> | SlashCommandSubcommandBuilder | SlashCommandSubcommandsOnlyBuilder | SlashCommandSubcommandGroupBuilder;
 }
 
 export interface ICommandFile {
